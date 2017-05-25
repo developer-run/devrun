@@ -1,0 +1,30 @@
+{
+  "name": "devrun/devrun",
+  "description": "Developer Run",
+  "minimum-stability": "stable",
+  "type": "project",
+  "license":"MIT",
+  "authors": [
+    {
+      "name": "Pavel Paulik"
+    }
+  ],
+
+  "require": {
+    "devrun/cms-module": "^0.4",
+    "devrun/article-module": "^0.4",
+    "devrun/catalog-module": "^0.4"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "4.5.*",
+    "phpunit/phpunit-dom-assertions": "1.0.x-dev",
+    "nette/tester": "v1.6.1",
+    "gedmo/doctrine-extensions": "dev-master"
+  },
+  "repositories": [
+    {
+      "type": "artifact",
+      "url": "/var/www/archives/"
+    }
+  ]
+}
