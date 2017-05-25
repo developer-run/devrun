@@ -1,0 +1,100 @@
+{block content}
+
+	<div id="banner">
+		<h1 n:block=title>Developer Run!</h1>
+	</div>
+
+
+	{control articleControl}
+
+	{_site.message.preklad}
+
+	<div class="boxes">
+		<div>
+			<h2>Všechny články</h2>
+			{foreach $articles['all'] as $article}
+				{$article->content|noescape}
+				<br>
+			{/foreach}
+		</div>
+
+		<div>
+
+			{ifset $articles['homepage']}
+				<h2>Homepage</h2>
+				{foreach $articles['homepage'] as $article}
+					{$article->content|noescape}
+					<br>
+				{/foreach}
+			{/ifset}
+		</div>
+
+		<div>
+
+			{ifset $articles['default']}
+				<h2>Default</h2>
+				{foreach $articles['default'] as $article}
+					{$article->content|noescape}
+					<br>
+				{/foreach}
+			{/ifset}
+
+
+		</div>
+
+		{ifset $articles['dalsi']}
+			<h2>Další články</h2>
+			{foreach $articles['dalsi'] as $article}
+				{$article->content|noescape}
+			{/foreach}
+		{/ifset}
+	</div>
+
+
+	<h3>Produkty</h3>
+	<hr>
+	{control productsControl}
+
+
+
+	<section class="well">
+		<h3>Administrovatelné komponenty
+			<small> pozor, nejedná se o články! Jsou to pevné komponenty. Texty jsou na základě translate překladů. Editovat by se mělo na základě inline ckeditoru.</small>
+		</h3>
+		<div class="row">
+			{for $i=1;$i<=3;$i++}
+			<div class="col-sm-6 col-md-4">
+				<div class="thumbnail"><img alt="100%x200" data-src="holder.js/100%x200" style="height: 200px; width: 100%; display: block;"
+											src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDI0MiAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MjAwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTViNjI3YTljZmMgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNWI2MjdhOWNmYyI+PHJlY3Qgd2lkdGg9IjI0MiIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI4OS41IiB5PSIxMDUuMSI+MjQyeDIwMDwvdGV4dD48L2c+PC9nPjwvc3ZnPg=="
+											data-holder-rendered="true">
+					<div class="caption">
+
+						{*{editable}*}
+						{*<p>Pokus</p>*}
+						{*{/editable}*}
+
+						{*{edit_}{/edit_}*}
+
+
+
+						{*<h3 n:editable="site.homepage.demoComponent.title$i">{_site.homepage.demoComponent.title$i}</h3>*}
+
+						<h3 n:editable="site.homepage.demoComponent.title$i">{_site.homepage.demoComponent.title$i|noescape}</h3>
+						<p n:editable="site.homepage.demoComponent.content$i">{_site.homepage.demoComponent.content$i|noescape}</p>
+					</div>
+				</div>
+			</div>
+			{/for}
+		</div>
+	</section>
+
+
+{/block}
+
+{*{block scripts}*}
+	{*{include parent}*}
+{*{/block}*}
+
+
+{block head}
+{/block}

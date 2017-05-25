@@ -1,0 +1,36 @@
+{
+	"name": "devrun/front-module",
+	"description": "Sandbox Devrun",
+	"keywords": ["cms", "nette", "Devrun", "DeveloperRun"],
+	"version": "0.1.0",
+	"homepage": "http://devrun.cz",
+	"license": ["BSD-3-Clause", "GPL-2.0", "GPL-3.0"],
+	"authors": [
+		{
+			"name": "Pavel Paulík",
+			"homepage": "http://pavel.paulik.cz"
+		}
+	],
+	"require": {
+		"php": ">=5.6",
+		"devrun/cms-module": "0.1.*@dev"
+	},
+	"autoload": {
+		"psr-0": {
+			"FrontModule": ""
+		}
+	},
+	"extra": {
+		"branch-alias": {
+			"dev-master": "0.1-dev"
+		},
+		"devrun": {
+			"hasPublishedPages": true,
+			"configuration": {
+				"extensions": {
+					"front": "FrontModule\\DI\\FrontExtension"
+				}
+			}
+		}
+	}
+}
