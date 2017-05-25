@@ -6,7 +6,11 @@ use Nette;
 use Nette\Application\Responses;
 use Tracy\ILogger;
 
-
+/**
+ * Class ErrorPresenter
+ *
+ * @package FrontModule\Presenters
+ */
 class ErrorPresenter extends Nette\Object implements Nette\Application\IPresenter
 {
 	/** @var ILogger */
