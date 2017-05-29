@@ -15,13 +15,13 @@ use Flame\Modules\Providers\IRouterProvider;
 use Kdyby\Doctrine\DI\IEntityProvider;
 use Nette\Application\Routers\Route;
 use Nette\Application\Routers\RouteList;
+use Nette\DI\ContainerBuilder;
 
 class FrontExtension extends CompilerExtension implements IPresenterMappingProvider, IRouterProvider, IEntityProvider
 {
 
     public $defaults = array(
         'publicModule' => TRUE,
-
 
     );
 
@@ -30,6 +30,7 @@ class FrontExtension extends CompilerExtension implements IPresenterMappingProvi
     {
         parent::loadConfiguration();
 
+        /** @var ContainerBuilder $builder */
         $builder = $this->getContainerBuilder();
         $config  = $this->getConfig($this->defaults);
 
